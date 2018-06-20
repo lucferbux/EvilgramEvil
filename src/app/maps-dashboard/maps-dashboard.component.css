@@ -1,0 +1,55 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+}
+
+.info-card-content{
+  text-align: left;
+}
+
+.card-map {
+  height: 100%;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.map-info-window {
+  display: flex;
+  flex-direction: column;
+}
+
+.description_point {
+  display: flex;
+  flex-direction: column;
+  position: relative; 
+}
+
+.description-card {
+  height: 100%;
+  width: 100%;
+  text-align: left;
+}
+
+.button-input {
+  height: 40px;
+  width: 120px;
+  margin-right: 30px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.image_card{
+  width: 300px;
+  align-self: center;
+}

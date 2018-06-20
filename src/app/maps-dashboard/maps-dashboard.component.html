@@ -1,0 +1,52 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="1" rowHeight="calc(100vh - 150px)">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-content class="dashboard-card-content">
+          <div>
+            <agm-map class="card-map" [latitude]="lat" [longitude]="lng">
+
+              <agm-marker *ngFor="let marker of markers" [latitude]="marker.location.latitude" [longitude]="marker.location.longitude">
+                <agm-info-window>
+                  <div class="map-info-window">
+                    <h2 class="mat-h1">{{marker.title}}</h2>
+                    <h3 class="mat-h4">{{marker.date.seconds * 1000 | date:'dd/MM/yyyy hh:mm:ss'}}</h3>
+
+                    <img class="image_card" src="{{marker.image}}">
+                    <p class="mat-body">{{ marker.description }}</p>
+                  </div>
+                </agm-info-window>
+              </agm-marker>
+
+              <agm-marker *ngIf="point" [latitude]="point.lat" [longitude]="point.lng">
+                <agm-info-window>
+                  <p>New Point</p>
+                </agm-info-window>
+              </agm-marker>
+
+
+
+            </agm-map>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <br>
+
+  <div class="description_point" *ngIf="point">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Title" [(ngModel)]="point.title">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Leave a description" [(ngModel)]="point.description">
+    </mat-form-field>
+    <button mat-raised-button [disabled]="!point" class="button-input" color="primary" (click)="addPoint()">Añadir</button>
+
+  </div>
+
+  {{descriptionMap}} {{titleMap}}
+
+</div>

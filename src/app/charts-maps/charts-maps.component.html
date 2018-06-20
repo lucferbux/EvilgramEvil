@@ -1,0 +1,26 @@
+<div class="grid-container">
+    <h1 class="mat-h1">Graphics</h1>
+    <mat-grid-list cols="1" rowHeight="calc(100vh - 80px)">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-card class="dashboard-card">
+                <div class="chart-class">
+                        <ngx-charts-bar-vertical
+                        [results]="single"
+                        [gradient]="gradient"
+                        [xAxis]="showXAxis"
+                        [yAxis]="showYAxis"
+                        [legend]="showLegend"
+                        [showXAxisLabel]="showXAxisLabel"
+                        [showYAxisLabel]="showYAxisLabel"
+                        [xAxisLabel]="xAxisLabel"
+                        [yAxisLabel]="yAxisLabel"
+                        (select)="onSelect($event)">
+                      </ngx-charts-bar-vertical>
+                </div>
+                        
+
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+</div>
