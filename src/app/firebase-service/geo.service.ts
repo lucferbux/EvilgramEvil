@@ -1,34 +1,25 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore'
-import { BehaviorSubject } from 'rxjs';
-import * as firebase from 'firebase/app'
-import { Issue } from './issue';
-import { Marker } from '../maps-dashboard/marker'
+import { Observable } from 'rxjs';
+import * as firebase from 'firebase'
+import { Marker } from '../model/marker'
 
 @Injectable({
   providedIn: 'root'
 })
 export class GeoService {
 
-  markerCollection: AngularFirestoreCollection<Issue>;
+  markerCollection: AngularFirestoreCollection<Marker>;
+  markers: Observable<Marker[]>;
 
   constructor(private afs: AngularFirestore) { 
-     this.markerCollection = this.afs.collection('issues', ref=> {
-       console.log(ref);
-       return ref
+     this.markerCollection = this.afs.collection('location', ref=> {
+       return ref;
      });
   }
 
-  setLocation(marker: Marker) {
-    const geopoint = this.generateGeopoint(marker.lat, marker.lng);
-    var issue: Issue = {
-      location: geopoint,
-      description: marker.description,
-      title: marker.title,
-      date: new Date(),
-      image: "https://material.angular.io/assets/img/examples/shiba2.jpg"
-    }
-    this.markerCollection.add(issue);
+  retreiveMarkers(){
+    return this.markers = this.markerCollection.valueChanges();
   }
 
 

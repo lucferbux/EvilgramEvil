@@ -56,7 +56,7 @@ import { MapsDashboardComponent } from './maps-dashboard/maps-dashboard.componen
 
 import { LongPressDirective } from './firebase-service/long-press.directive';
 import { ChartsMapsComponent } from './charts-maps/charts-maps.component';
-import { LoginScreenComponent } from './login-screen/login-screen.component';
+
 
 export const firebaseConfig = environment.firebaseConfig;
 export const googleMapsKey = environment.googleMapsKey;
@@ -67,8 +67,7 @@ export const googleMapsKey = environment.googleMapsKey;
     MenuNavComponent,
     MapsDashboardComponent,
     LongPressDirective,
-    ChartsMapsComponent,
-    LoginScreenComponent
+    ChartsMapsComponent
   ],
   imports: [
     BrowserModule,

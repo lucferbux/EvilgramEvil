@@ -25,31 +25,7 @@
 .map-info-window {
   display: flex;
   flex-direction: column;
+  color: black !important;
 }
 
-.description_point {
-  display: flex;
-  flex-direction: column;
-  position: relative; 
-}
 
-.description-card {
-  height: 100%;
-  width: 100%;
-  text-align: left;
-}
-
-.button-input {
-  height: 40px;
-  width: 120px;
-  margin-right: 30px;
-}
-
-.example-full-width {
-  width: 100%;
-}
-
-.image_card{
-  width: 300px;
-  align-self: center;
-}
